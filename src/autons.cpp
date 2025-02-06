@@ -489,10 +489,10 @@ void redWP_yippie(){
         chassis.turnToPoint(-13.399, -52.303, 1000);
         chassis.moveToPoint(26.222, -50.917, 2000, {.maxSpeed=100, .minSpeed=60});
         //wall stake
-        chassis.turnToPoint(4, -59.496, 1000);
-        chassis.moveToPoint(4, -59.5, 1500, {.maxSpeed=100, .minSpeed=60}, false);
+        chassis.turnToPoint(12, -59.496, 1000);
+        chassis.moveToPoint(12, -59.5, 1500, {.maxSpeed=100, .minSpeed=60}, false);
         currState = 1; 
-        target = states[currState] - 520;
+        target = states[currState] - 505;
         chassis.turnToPoint(6, -70, 1000);
         chassis.moveToPoint(6, -70, 1000, {}, false);
         pros::delay(500);
@@ -500,7 +500,7 @@ void redWP_yippie(){
             intake.move(0);
         currState = 3; 
         target = states[currState] - 510;
-        pros::delay(500);
+        pros::delay(750);
         currState = 0; 
         target = states[currState] - 510;
         pros::delay(250);
@@ -542,17 +542,17 @@ void redWP_yippie(){
             intake.move(0);
         //second wallstake
         currState = 1; 
-        target = states[currState] - 520;
+        target = states[currState] - 505;
         chassis.moveToPoint(-2, 62.713, 2000, {.maxSpeed=100, .minSpeed=60});
         chassis.waitUntil(20);
             //intake.move(-127);
             antiJam.resume();
         chassis.turnToPoint(5, 70, 1000);
         chassis.moveToPoint(5, 70, 1000, {.maxSpeed=100, .minSpeed=60}, false);
+        pros::delay(500);
             antiJam.suspend();
             intake.move(0);
         pros::delay(250);
-        intake.move(0);
         currState = 3; 
         target = states[currState] - 510;
         pros::delay(750);
@@ -577,12 +577,12 @@ void redWP_yippie(){
         //more donits
         chassis.moveToPoint(31.299, 52.596, 1500, {.maxSpeed=100, .minSpeed=80});
         chassis.turnToPoint(60, 52.596, 1000);
-        chassis.moveToPoint(51, 53, 1500, {.maxSpeed=100, .minSpeed=80});
-        chassis.turnToPoint(62, 64, 1000);
-        chassis.moveToPoint(62, 64, 1500, {.maxSpeed=100, .minSpeed=80});
+        chassis.moveToPoint(53, 53, 1500, {.maxSpeed=100, .minSpeed=80});
+        chassis.turnToPoint(62, 67, 1000);
+        chassis.moveToPoint(62, 65, 1500, {.maxSpeed=100, .minSpeed=80});
         chassis.turnToPoint(-9.22, -38.171, 1000, {}, false);
         Clamp.set_value(LOW);
-        chassis.moveToPoint(62.266, 65.982, 2000, {.forwards=false, .maxSpeed=100, .minSpeed=60}, false);
+        chassis.moveToPoint(65.266, 68.982, 2100, {.forwards=false, .maxSpeed=100, .minSpeed=60}, false);
             antiJam.suspend();
             intake.move(0);
         //last corner
@@ -590,15 +590,15 @@ void redWP_yippie(){
         chassis.moveToPoint(76.305, -56.342, 2000, {.maxSpeed=100, .minSpeed=80});
 
         //last allience stake
-        chassis.moveToPoint(56.342, -24.338, 1500, {.forwards=false, .maxSpeed=100, .minSpeed=60}, false);
+        chassis.moveToPoint(59.342, -24.338, 1500, {.forwards=false, .maxSpeed=100, .minSpeed=60}, false);
             //intake.move(-127);
             antiJam.resume();
         currState = 1; 
-        target = states[currState] - 520;
-        chassis.moveToPoint(50.917, -42.264, 1500, {.maxSpeed=100, .minSpeed=60});
+        target = states[currState] - 510;
+        chassis.moveToPoint(55.917, -42.264, 1500, {.maxSpeed=100, .minSpeed=60});
         chassis.turnToPoint(67.266, -10.912, 1000);
-        chassis.moveToPoint(66.266, -8.912, 1500, {.maxSpeed=100, .minSpeed=60}, false);
-        chassis.turnToPoint(80, 0, 1000);
+        chassis.moveToPoint(67.266, -8.912, 1500, {.maxSpeed=100, .minSpeed=60}, false);
+        chassis.turnToPoint(82.5, 0, 1000);
         currState = 4; 
         target = states[currState] - 510;
         antiJam.suspend();

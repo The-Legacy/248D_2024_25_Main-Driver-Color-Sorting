@@ -31,6 +31,7 @@ pros::Optical opSense(8);
 
 Rotation latRot(-10);
 Rotation angRot(-6);
+Rotation lbRot(15);
 
 adi::Pneumatics Clamp(1, LOW);
 adi::Pneumatics inLift(7, LOW);
