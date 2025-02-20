@@ -720,7 +720,7 @@ void redWP_yippie(){
         pros::delay(950);
         currState = 0;
         target = states[currState];
-        chassis.moveToPoint(44.75, 23.4, 1000, {.forwards=false, .maxSpeed=100, .minSpeed=80}, false);
+        chassis.moveToPoint(46.75, 23.4, 1000, {.forwards=false, .maxSpeed=100, .minSpeed=80}, false);
         intake.move(-127);
         chassis.moveToPoint(46.519, -25.297, 2000, {.maxSpeed=60, .minSpeed=40}, false);
         pros::delay(250);
@@ -731,11 +731,11 @@ void redWP_yippie(){
         Clamp.set_value(HIGH);
         pros::delay(150);
         intake.move(-127);
-        chassis.turnToPoint(15.977, 38.788, 1000);
-        chassis.moveToPoint(15, 38.788, 1500, {.maxSpeed=100, .minSpeed=70},false);
+        chassis.turnToPoint(18.977, 38.788, 1000);
+        chassis.moveToPoint(18, 38.788, 1500, {.maxSpeed=100, .minSpeed=70},false);
         chassis.turnToPoint(2, 45.288, 1000);
-        chassis.moveToPoint(2, 45.288, 1500, {.maxSpeed=100, .minSpeed=60}, false);
-        chassis.moveToPoint(15, 45, 1000, {.forwards=false, .maxSpeed=100, .minSpeed=60}, false);
+        chassis.moveToPoint(2, 47.288, 1500, {.maxSpeed=100, .minSpeed=60}, false);
+        chassis.moveToPoint(15, 47, 1000, {.forwards=false, .maxSpeed=100, .minSpeed=60}, false);
         chassis.turnToPoint(23.9, 0, 1000);
         chassis.moveToPoint(25, 0, 1500, {.maxSpeed=60, .minSpeed=40}, false);
         currState = 3;
@@ -790,14 +790,16 @@ void redWP_yippie(){
         chassis.turnToPoint(19.977, 34.788, 1000);
         chassis.moveToPoint(19.977, 34.788, 1500, {.maxSpeed=100, .minSpeed=70},false);
         chassis.turnToPoint(35.338, 18.375, 1000);
-        chassis.moveToPoint(1.95, 13.374, 1750, {.maxSpeed=100, .minSpeed=60}, false);
+        chassis.moveToPoint(5, 14.25, 1750, {.maxSpeed=100, .minSpeed=60}, false);
+        chassis.turnToPoint(-8.95, 6, 1000, {}, false);
         intake.move(0);
         inLift.set_value(HIGH);
         pros::delay(150);
-        chassis.moveToPoint(25.721, 25, 1000, {.forwards=false, .maxSpeed=100, .minSpeed=60}, false);
+        chassis.moveToPoint(30.721, 30, 1500, {.forwards=false, .maxSpeed=100, .minSpeed=60}, false);
         intake.move(-127);
         inLift.set_value(LOW);
-        chassis.moveToPoint(14, 12, 1000, {.maxSpeed=100, .minSpeed=60}, false);
+        chassis.moveToPoint(20, 11, 1000, {.maxSpeed=80, .minSpeed=60}, false);
+        pros::delay(1000);
         currState = 3;
         target = states[currState];
     }
