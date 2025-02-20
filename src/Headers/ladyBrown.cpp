@@ -4,7 +4,7 @@
 
 int currState = 0;
 const int numStates = 5;
-int states[numStates] = {0, 526, 1200, 1900, 2800};
+int states[numStates] = {800, 4800, 9272, 17600, 25000}; //0, 528, 1200, 2150, 3200
 int target = 0;
 
 void nextState() {
@@ -19,8 +19,12 @@ void nextState() {
 }
 
 void liftControl() {
-    double kp = .4;
-    double error = target - LB.get_position();
+    double kp = .025;
+    double error = target - lbRot.get_position();
     double velocity = kp * error;
-    LB.move(velocity);
+    if(states[currState] - 40 > error || states[currState] + 40 < error){
+        LB.move(velocity);
+    } else {
+        LB.move(0);
+    }
 }

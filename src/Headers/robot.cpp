@@ -11,6 +11,8 @@
 using namespace pros;
 using namespace lemlib;
 
+//variables
+
 stormlib::clock driverClock;
 
 rd::Console console;

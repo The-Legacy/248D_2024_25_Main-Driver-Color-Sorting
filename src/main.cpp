@@ -4,18 +4,25 @@
 
 rd::Selector Match_autos({
 	{"State Skills", &stateSkills},
+	{"Safe Blue Goal", &goalSideSafeBlue},
+	{"Safe Red Goal", &goalSideSafeRed},
+	{"State Blue Goal Rush", &stateBlueGoalRush},
+	{"State Red Goal Rush", &stateRedGoalRush},
+	{"Wallstake Rush Blue", &WallstakeRush_Blue},
+	{"Wallstake Rush Red", &WallstakeRush_Red},
+	{"Red Sig AWP", &redWP_yippie},
+	{"Blue Sig AWP", &blueWP_yippie},	
+	{"Lame Blue Duck", &lameBlueDuck},
+	{"Lame Red Duck", &lameRedDuck},
 	{"Blue Solo Winpoint", &blueSoloWP},
 	{"Blue Pause", &blueSoloPause},
 	{"Red goal rush", &redGoalRush},
-	{"Red Solo Winpoint", &redSoloWP},
 	{"Blue elims rush", &blueElimsRush},
 	{"Blue goal rush", &blueGoalRush},
-	{"Blue Sig AWP", &blueWP_yippie},
 	{"Red Four Donut", &redFourDonut},
 	{"Blue Four Donut", &blueFourDonut},
 	{"Skills Yolo", &skillsYolo},
-	{"Red Sig AWP", &redWP_yippie},
-	
+	{"Red Solo Winpoint", &redSoloWP},
 });
 
 void initialize() {
@@ -57,8 +64,8 @@ void autonomous() {
 void opcontrol() {
 	console.clear();
 	console.println("Driving...");
-    opSense.set_led_pwm(50);
-    opSense.set_integration_time(25);
+	currState = 0;
+	target = states[currState];
 	while (true) {
 		// get left y and right x positions
         int leftY = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);

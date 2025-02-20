@@ -89,7 +89,7 @@ void setClamp() {
 }
 
 void colorSorting(){
-  opSense.set_led_pwm(50);
+  opSense.set_led_pwm(100);
   opSense.set_integration_time(25);
 	if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {
       hooks.move_velocity(600);
